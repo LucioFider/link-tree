@@ -3,21 +3,18 @@
 @tailwind utilities;
 
 body {
-  /* height: 100vh; */
   background-image: linear-gradient(
-    205deg,
-    hsl(283deg 56% 26%) 0%,
-    hsl(270deg 49% 28%) 3%,
-    hsl(256deg 43% 30%) 7%,
-    hsl(242deg 39% 32%) 12%,
-    hsl(228deg 49% 30%) 19%,
-    hsl(219deg 62% 27%) 34%,
-    hsl(211deg 80% 24%) 58%,
-    hsl(213deg 81% 22%) 72%,
-    hsl(214deg 81% 20%) 81%,
-    hsl(216deg 83% 18%) 87%,
-    hsl(218deg 85% 16%) 92%,
-    hsl(221deg 88% 14%) 96%,
-    hsl(224deg 90% 12%) 100%
+    45deg,
+    hsl(240deg 78% 4%) 0%,
+    hsl(240deg 46% 7%) 3%,
+    hsl(235deg 42% 10%) 9%,
+    hsl(229deg 47% 12%) 22%,
+    hsl(228deg 50% 14%) 50%,
+    hsl(226deg 54% 16%) 75%,
+    hsl(225deg 57% 19%) 87%,
+    hsl(224deg 61% 21%) 93%,
+    hsl(223deg 64% 23%) 97%,
+    hsl(222deg 67% 25%) 99%,
+    hsl(221deg 71% 27%) 100%
   );
 }
