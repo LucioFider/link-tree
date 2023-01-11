@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 import Image from "next/image";
-import data from "../data.json";
-import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
+import { get } from "@vercel/edge-config";
 
 interface Data {
   name: string;
@@ -21,7 +20,8 @@ interface Social {
   title: string;
 }
 
-export default function Home() {
+export default async function HomePage() {
+  const data = await get("linktree");
   return (
     <div className="">
       <div className="md:w-1/2 h-full flex flex-col items-center mx-auto mt-4 md:mt-12 p-10 justify-center">
