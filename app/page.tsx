@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-key */
 import Image from "next/image";
 import { get } from "@vercel/edge-config";
+import { redirect } from "next/navigation";
 
 interface Data {
+  desc: ReactNode;
   name: string;
   avatar: string;
   links: Link[];
@@ -21,7 +23,11 @@ interface Social {
 }
 
 export default async function HomePage() {
-  const data = await get("linktree");
+  const data: Data | undefined = await get("linktree");
+
+  if (!data) {
+    redirect("https:https://sello-hub.vercel.app/");
+  }
   return (
     <div className="">
       <div className="md:w-1/2 h-full flex flex-col items-center mx-auto mt-4 md:mt-12 p-10 justify-center">
@@ -42,13 +48,13 @@ export default async function HomePage() {
           <LinkCard key={link.href} {...link} />
         ))}
         <div className="flex items-center gap-4 text-white mt-8 md:mb-12">
-          {data.socials.map((link) => {
-            if (link.href.includes("twitter")) {
-              return <TwitterIcon />;
+          {data.socials.map((social) => {
+            if (social.href.includes("twitter")) {
+              return <TwitterIcon key={social.href} />;
             }
-            if (link.href.includes("github")) {
+            if (social.href.includes("github")) {
               // eslint-disable-next-line react/jsx-key
-              return <GitHubIcon />;
+              return <GitHubIcon key={social.href} />;
             }
           })}
         </div>
