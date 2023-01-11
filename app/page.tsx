@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { get } from "@vercel/edge-config";
 import { redirect } from "next/navigation";
+import { ReactNode } from "react";
 
 interface Data {
   desc: ReactNode;
